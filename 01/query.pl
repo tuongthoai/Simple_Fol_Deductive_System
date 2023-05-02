@@ -1,0 +1,2 @@
+criminal(nono).
+hostile(nono).
