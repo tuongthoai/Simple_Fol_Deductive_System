@@ -6,6 +6,7 @@ ANSWER_PATH = "./04/OUTPUT.txt"
 
 KB = FolKB()
 
+# Read KB
 file = open(KB_PATH, 'r')
 # file = open('./02/ShinWorldKnowledge.pl', 'r')
 clauses = [x.strip() for x in file.readlines()]
@@ -23,6 +24,7 @@ for clause in clauses:
         # print(cnt)
         KB.learn(toExpression(clause))
 
+# Read Query and Answer them
 file = open(QUERY_PATH, 'r')
 output_file = open(ANSWER_PATH, 'w')
 queries = [x.strip() for x in file.readlines()]
@@ -34,17 +36,21 @@ for query in queries:
         result = list(KB.ask_generator(toExpression(query)))
         cnt += 1
         ll = len(result)
+
+        res = []
+        for ans in result:
+            res.append(str(ans).replace("{", "").replace("}", ""))
+
         if ll == 0:
             output_file.write("{} False\n".format(cnt))
         elif ll > 1:
-            output_file.write("{} {}\n".format(cnt, result))
+            output_file.write("{} {}\n".format(cnt, res))
         else:
-            tmp = str(result[0])
+            tmp = str(res[0])
             if len(tmp) == 2:
                 output_file.write(f"{cnt} True\n")
             else:
-                output_file.write(f"{cnt} {result}\n")
-
+                output_file.write(f"{cnt} {res}\n")
 
 file.close()
 output_file.close()

@@ -99,7 +99,7 @@ def subexpressions(x):
 def toExpression(x):
     """
     :param x: a string of expresion
-    :return: a Expression eval by python interpreter using eval and proper Expression implementation.
+    :return: an Expression eval by python interpreter using eval and proper Expression implementation.
     """
 
     res = eval(handling_sentences(x), defaultkeydict(Symbol)) if isinstance(x, str) else x
@@ -132,14 +132,14 @@ def subst(s, x):
         return Expression(x.op, *[subst(s, arg) for arg in x.args])
 
 
-def unify_mm(x, y, s=None):
+def unify(x, y, s=None):
     if s is None:
         s = {}
-    set_eq = extend(s, x, y)
-    s = set_eq.copy()
+    extended_theta = extend(s, x, y)
+    s = extended_theta.copy()
     while True:
-        trans = 0
-        for x, y in set_eq.items():
+        trans_cnt = 0
+        for x, y in extended_theta.items():
             if x == y:
                 # if x = y this mapping is deleted (rule b)
                 del s[x]
@@ -168,13 +168,13 @@ def unify_mm(x, y, s=None):
                     return None
                 s[x] = vars_elimination(y, s)
                 if y == s.get(x):
-                    trans += 1
+                    trans_cnt += 1
             else:
-                trans += 1
-        if trans == len(set_eq):
+                trans_cnt += 1
+        if trans_cnt == len(extended_theta):
             # if no transformation has been applied, stop with success
             return s
-        set_eq = s.copy()
+        extended_theta = s.copy()
 
 
 def is_definite_clause(s):
@@ -303,29 +303,3 @@ def parse_definite_clause(s):
     else:
         antecedent, consequent = s.args
         return conjuncts(antecedent), consequent
-
-
-# Forward Chainning
-def constant_symbols(x):
-    """Return the set of all constant symbols in x."""
-    if not isinstance(x, Expression):
-        return set()
-    elif is_prop_symbol(x.op) and not x.args:
-        return {x}
-    else:
-        return {symbol for arg in x.args for symbol in constant_symbols(arg)}
-
-
-def is_prop_symbol(s):
-    return is_symbol(s) and s[0].islower()
-
-
-def variables(s):  # get all variables
-    return {x for x in get_sub_expressions(s) if is_variable(x)}
-
-
-def get_sub_expressions(x):  # Including x itself
-    yield x
-    if isinstance(x, Expression):
-        for arg in x.args:
-            yield from get_sub_expressions(arg)
