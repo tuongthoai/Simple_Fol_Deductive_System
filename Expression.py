@@ -109,7 +109,7 @@ def toExpression(x):
 def handling_sentences(x):
     x = x.replace("not", "~").replace(" ", "").replace("),", ")&").replace(");", ")|").replace(".", "").replace('\n',
                                                                                                                 '')
-
+    x = x.replace("not", "~")
     if ':-' in x:
         lhs, rhs = x.split(':-')
         x = rhs + "|'==>'|" + lhs
@@ -118,7 +118,7 @@ def handling_sentences(x):
 
 def subst(s, x):
     """Substitute the substitution s into the expression x.
-        S is dict contain mapping value of each variables to its value then assign it into the expression x
+        S is dict contain mapping value of each variable to its value then assign it into the expression x
     """
     if isinstance(x, list):
         return [subst(s, xi) for xi in x]
@@ -178,7 +178,8 @@ def unify_mm(x, y, s=None):
 
 
 def is_definite_clause(s):
-    """check if s in in form A & B & ... & C ==> D,
+    """
+    check if s in in form A & B & ... & C ==> D,
     or ~A | ~B | ... | ~C | D
     """
     if is_symbol(s.op):
@@ -200,7 +201,7 @@ def standardize_variables(sentence, dic=None):
         if sentence in dic:
             return dic[sentence]
         else:
-            v = Expression('x_{}'.format(next(standardize_variables.counter)))
+            v = Expression('X_{}'.format(next(standardize_variables.counter)))
             dic[sentence] = v
             return v
     else:
@@ -243,10 +244,6 @@ def dissociate(op, args):
 
 def conjuncts(s):
     return dissociate('&', [s])
-
-
-def disjuncts(s):
-    return dissociate('|', [s])
 
 
 def extend(s, var, val):

@@ -16,7 +16,7 @@ class FolKB:
             raise Exception('Not a definite clause: {}'.format(sentence))
 
     def ask_generator(self, query):
-        return fol_fc_ask(self, query)
+        return fol_bc_ask(self, query)
 
     def retract(self, sentence):
         self.clauses.remove(sentence)
