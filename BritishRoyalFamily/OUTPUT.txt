@@ -1,0 +1,30 @@
+1 {X: james_viscount_severn},{X: mike_tindall},{X: prince_edward},{X: prince_andrew},{X: prince_charles},{X: peter_phillips},{X: prince_harry},{X: timothy_laurence},{X: prince_george},{X: prince_william},{X: prince_phillip},{X: captain_mark_phillips}
+2 True
+3 {X: princess_anne}
+4 {X: princess_andrew}
+5 {X: captain_mark_phillips, Y: zara_phillips},{X: prince_phillip, Y: princess_anne},{X: princess_diana, Y: prince_william},{X: mike_tindall, Y: mia_grace_tindall},{X: captain_mark_phillips, Y: peter_phillips},{X: prince_william, Y: prince_george},{X: queen_elizabeth_II, Y: prince_charles},{X: princess_anne, Y: peter_phillips},{X: prince_charles, Y: prince_william},{X: sarah_ferguson, Y: princess_eugenie},{X: queen_elizabeth_II, Y: princess_anne},{X: peter_phillips, Y: savannah_phillips},{X: queen_elizabeth_II, Y: prince_edward},{X: prince_phillip, Y: prince_andrew},{X: prince_andrew, Y: princess_beatrice},{X: prince_andrew, Y: princess_eugenie},{X: prince_edward, Y: lady_louise_mountbatten_windsor},{X: autumn_kelly, Y: isla_phillips},{X: autumn_kelly, Y: savannah_phillips},{X: queen_elizabeth_II, Y: prince_andrew},{X: prince_phillip, Y: prince_charles},{X: sarah_ferguson, Y: princess_beatrice},{X: prince_charles, Y: prince_harry},{X: peter_phillips, Y: isla_phillips},{X: princess_diana, Y: prince_harry},{X: princess_anne, Y: zara_phillips},{X: prince_william, Y: princess_charlotte},{X: kate_middleton, Y: prince_george},{X: sophie_rhys_jones, Y: james_viscount_severn},{X: prince_edward, Y: james_viscount_severn},{X: kate_middleton, Y: princess_charlotte},{X: sophie_rhys_jones, Y: lady_louise_mountbatten_windsor},{X: prince_phillip, Y: prince_edward},{X: zara_phillips, Y: mia_grace_tindall}
+6 {X: prince_phillip}
+7 True
+8 True
+9 {X: sarah_ferguson}
+10 False
+11 {X: prince_andrew},{X: prince_edward},{X: prince_charles}
+12 {X: princess_charlotte}
+13 {X: prince_phillip, Y: prince_william},{X: queen_elizabeth_II, Y: prince_william},{X: prince_phillip, Y: prince_harry},{X: princess_anne, Y: savannah_phillips},{X: queen_elizabeth_II, Y: princess_beatrice},{X: prince_charles, Y: princess_charlotte},{X: prince_phillip, Y: james_viscount_severn},{X: captain_mark_phillips, Y: isla_phillips},{X: captain_mark_phillips, Y: savannah_phillips},{X: prince_charles, Y: prince_george},{X: princess_anne, Y: isla_phillips},{X: queen_elizabeth_II, Y: zara_phillips},{X: princess_diana, Y: prince_george},{X: captain_mark_phillips, Y: mia_grace_tindall},{X: queen_elizabeth_II, Y: prince_harry},{X: queen_elizabeth_II, Y: peter_phillips},{X: princess_anne, Y: mia_grace_tindall},{X: prince_phillip, Y: zara_phillips},{X: prince_phillip, Y: princess_eugenie},{X: queen_elizabeth_II, Y: james_viscount_severn},{X: princess_diana, Y: princess_charlotte},{X: queen_elizabeth_II, Y: lady_louise_mountbatten_windsor},{X: prince_phillip, Y: peter_phillips},{X: queen_elizabeth_II, Y: princess_eugenie},{X: prince_phillip, Y: lady_louise_mountbatten_windsor},{X: prince_phillip, Y: princess_beatrice}
+14 {X: princess_diana}
+15 {X: prince_charles}
+16 True
+17 {X: prince_william}
+18 True
+19 {X: princess_anne, Y: princess_eugenie},{X: zara_phillips, Y: savannah_phillips},{X: princess_anne, Y: prince_harry},{X: princess_anne, Y: princess_beatrice},{X: princess_anne, Y: lady_louise_mountbatten_windsor},{X: princess_anne, Y: prince_william},{X: princess_anne, Y: james_viscount_severn},{X: zara_phillips, Y: isla_phillips}
+20 {X: prince_andrew},{X: prince_charles}
+21 False
+22 False
+23 True
+24 {X: kate_middleton}
+25 {X: captain_mark_phillips}
+26 False
+27 {X: zara_phillips},{X: princess_eugenie},{X: lady_louise_mountbatten_windsor},{X: princess_beatrice}
+28 {X: princess_anne},{X: prince_andrew},{X: prince_edward},{X: prince_charles}
+29 {X: princess_diana, Y: prince_charles},{X: princess_anne, Y: captain_mark_phillips},{X: prince_charles, Y: princess_diana},{X: princess_andrew, Y: sarah_ferguson},{X: sarah_ferguson, Y: princess_andrew},{X: captain_mark_phillips, Y: princess_anne}
+30 True

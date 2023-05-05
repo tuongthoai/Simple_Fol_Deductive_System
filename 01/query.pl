@@ -1,2 +1,0 @@
-criminal(nono).
-hostile(nono).

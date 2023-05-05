@@ -1,14 +1,25 @@
 from FOL_Knowlegde_Base import *
 
-KB_PATH = "./04/BritishRoyalfamily.pl"
-QUERY_PATH = "./04/BritishRoyalfamily_Query.txt"
-ANSWER_PATH = "./04/OUTPUT.txt"
+"""
+For testing BritishRoyalFamily please uncomment from line 7 to line 10 and comment line 13 to line 16
+otherwise do the same thing but reverse it.
+"""
+
+FOLDER_PATH = 'BritishRoyalFamily'
+KB_PATH = "./"+FOLDER_PATH+"/BritishRoyalfamily.pl"
+QUERY_PATH = "./"+FOLDER_PATH+"/BritishRoyalfamily_Query.txt"
+ANSWER_PATH = "./"+FOLDER_PATH+"/OUTPUT.txt"
+
+
+# FOLDER_PATH = 'ShinFamily'
+# KB_PATH = "./"+FOLDER_PATH+"/ShinWorldKnowledge_c.pl"
+# QUERY_PATH = "./"+FOLDER_PATH+"/ShinWorldQueries.txt"
+# ANSWER_PATH = "./"+FOLDER_PATH+"/OUTPUT.txt"
 
 KB = FolKB()
 
 # Read KB
 file = open(KB_PATH, 'r')
-# file = open('./02/ShinWorldKnowledge.pl', 'r')
 clauses = [x.strip() for x in file.readlines()]
 file.close()
 
@@ -33,24 +44,35 @@ for query in queries:
         continue
 
     if query != '':
-        result = list(KB.ask_generator(toExpression(query)))
+        expression = toExpression(query)
+        var = []
+        for arg in expression.args:
+            if is_variable(arg):
+                var.append(toExpression(arg.op))
+
+        result = list(KB.ask_generator(expression))
         cnt += 1
         ll = len(result)
-
-        res = []
-        for ans in result:
-            res.append(str(ans).replace("{", "").replace("}", ""))
-
+        
         if ll == 0:
             output_file.write("{} False\n".format(cnt))
-        elif ll > 1:
-            output_file.write("{} {}\n".format(cnt, res))
+        # elif ll > 1:
+        #     output_file.write("{} {}\n".format(cnt, result))
         else:
-            tmp = str(res[0])
-            if len(tmp) == 2:
-                output_file.write(f"{cnt} True\n")
+            if not result[0].keys:
+                output_file.write(f"{cnt} {False}\n")
             else:
-                output_file.write(f"{cnt} {res}\n")
+                if not var:
+                    output_file.write(f"{cnt} True\n")
+                else:
+                    final_result = set()
+
+                    for subs in result:
+                        final_result.add(str(dict([(arg, subs.get(arg)) for arg in var])))
+
+                    ans = ','.join(final_result)
+
+                    output_file.write(f"{cnt} {ans}\n")
 
 file.close()
 output_file.close()

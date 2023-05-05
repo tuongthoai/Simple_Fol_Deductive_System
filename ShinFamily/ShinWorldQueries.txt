@@ -1,0 +1,20 @@
+parent(koyamayoshiji,noharamisae).
+father(noharaginnosuke,satomasao).
+pet(shiro,X).
+elder(bo).
+friend(suotomeai, sakuradanene).
+granddaughter(noharahimawari,koyamahisae).
+grandparent(noharashinnosuke,koyamafusae).
+sister(koyamamasae,koyamamusae).
+husband(kazamadaddy,masaomommy).
+have_a_child(satomasao).
+aunt(koyamamasae,noharashinnosuke).
+nieceaunt(noharahimawari,noharasemashi).
+animal(shiro).
+grandparent(noharatsuru,noharahimawari).
+child(X,noharaginnosuke).
+brother(kazamadaddy, nenedaddy).
+child(X,kazamamineko).
+son(X,sakuradamoeko).
+wife(X,noharahiroshi).
+father(X,noharasemashi).

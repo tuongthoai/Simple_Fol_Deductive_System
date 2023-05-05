@@ -1,0 +1,20 @@
+1 True
+2 False
+3 {X: noharahimawari},{X: noharashinnosuke}
+4 False
+5 True
+6 True
+7 False
+8 True
+9 False
+10 False
+11 True
+12 False
+13 True
+14 True
+15 {X: noharasemashi},{X: noharahiroshi}
+16 False
+17 {X: kazamatoru}
+18 False
+19 {X: noharamisae}
+20 {X: noharaginnosuke}

@@ -4,7 +4,7 @@ import itertools
 
 class Expression:
     """An Expression has its operator and arguments
-    Examples: 2 + 3 then op (operator) is '+' and args is (2, 3)
+    Examples: 2 + 3 then op (operator)   is '+' and args is (2, 3)
               plusOne(x): op= plusOne args is (x)
     """
 
@@ -16,11 +16,7 @@ class Expression:
     def __and__(self, rhs):
         return Expression('&', self, rhs)
 
-    def __xor__(self, rhs):
-        return Expression('^', self, rhs)
-
     def __or__(self, rhs):
-        """Allow both P | Q, and P |'==>'| Q."""
         if isinstance(rhs, Expression):
             return Expression('|', self, rhs)
         else:
@@ -33,9 +29,6 @@ class Expression:
 
     def __rand__(self, lhs):
         return Expression('&', lhs, self)
-
-    def __rxor__(self, lhs):
-        return Expression('^', lhs, self)
 
     def __ror__(self, lhs):
         return Expression('|', lhs, self)
@@ -86,14 +79,6 @@ class UnaryExpression:
 def Symbol(name):
     """A Symbol is just an Expression with no args."""
     return Expression(name)
-
-
-def subexpressions(x):
-    """Yield the subexpressions of an Expression (including x itself)."""
-    yield x
-    if isinstance(x, Expression):
-        for arg in x.args:
-            yield from get_sub_expressions(arg)
 
 
 def toExpression(x):
@@ -212,10 +197,16 @@ standardize_variables.counter = itertools.count()
 
 
 def is_variable(x):
+    """
+    Checking if a Expression is a variable or not (Expression has no args and op is uppercase first letter)
+    """
     return isinstance(x, Expression) and not x.args and x.op[0].isupper()
 
 
 def is_var_symbol(s):
+    """
+    check if a string is a Variable or not (uppercase first letter)
+    """
     return is_symbol(s) and s[0].isupper()
 
 

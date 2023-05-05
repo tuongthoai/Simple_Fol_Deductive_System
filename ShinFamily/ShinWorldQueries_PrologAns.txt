@@ -1,0 +1,61 @@
+1.parent(koyamayoshiji,noharamisae).
+true
+
+2.father(noharaginnosuke,satomasao).
+false
+
+3.pet(shiro,X).
+X = noharashinnosuke
+X = noharahimawari
+
+4.elder(bo).
+false
+
+5.friend(suotomeai, sakuradanene).
+true
+
+6.granddaughter(noharahimawari,koyamahisae).
+true
+
+7.grandparent(noharashinnosuke,koyamafusae).
+false
+
+8.sister(koyamamasae,koyamamusae).
+true
+
+9.husband(kazamadaddy,masaomommy).
+false
+
+10.have_a_child(satomasao).
+false
+
+11.aunt(koyamamasae,noharashinnosuke).
+true
+
+12.nieceaunt(noharahimawari,noharasemashi).
+false
+
+13.animal(shiro).
+true
+
+14.grandparent(noharatsuru,noharahimawari).
+true
+
+15.child(X,noharaginnosuke).
+X = noharasemashi
+X = noharahiroshi
+
+16.brother(kazamadaddy, nenedaddy).
+false
+
+17.child(X,kazamamineko).
+X = kazamatoru
+
+18.son(X,sakuradamoeko).
+false
+
+19.wife(X,noharahiroshi).
+X = noharamisae
+
+20.father(X,noharasemashi).
+X = noharaginnosuke

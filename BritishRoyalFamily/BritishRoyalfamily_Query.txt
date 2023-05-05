@@ -1,0 +1,30 @@
+male(X).
+female(princess_anne).
+married(timothy_laurence, X).
+divorced(X, sarah_ferguson).
+parent(X, Y).
+husband(X, queen_elizabeth_II).
+wife(sophie_rhys_jones,prince_edward).
+father(prince_phillip,prince_charles).
+mother(X, princess_beatrice).
+child(autumn_kelly, captain_mark_phillips).
+son(X,prince_phillip).
+daughter(X,prince_william).
+grandparent(X,Y).
+grandmother(X,princess_charlotte).
+grandfather(X, prince_george).
+sibling(princess_charlotte, prince_george).
+brother(prince_harry,X).
+sister(savannah_phillips,isla_phillips).
+aunt(X, Y).
+uncle(X,james_viscount_severn).
+niece(mia_grace_tindall, autumn_kelly).
+nephew(prince_george,autumn_kelly).
+grandchild(zara_phillips, queen_elizabeth_II).
+married(X, prince_william).
+divorced(X, princess_anne).
+married(X, captain_mark_phillips).
+granddaughter(X, prince_phillip).
+child(X, queen_elizabeth_II).
+divorced(X, Y).
+female(princess_anne).

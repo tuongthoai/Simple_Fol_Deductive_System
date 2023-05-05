@@ -26,7 +26,8 @@ class FolKB:
 
 
 def fol_bc_ask(kb, query):
-    return fol_bc_or(kb, query, {})
+    answer = fol_bc_or(kb, query, {})
+    return answer
 
 
 def fol_bc_or(kb, goal, theta):
